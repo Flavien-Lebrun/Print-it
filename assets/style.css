@@ -54,7 +54,6 @@ table {
 	border-spacing: 0;
 }
 body {
-
 }
 section {
 	margin-block: 6em;
@@ -113,6 +112,7 @@ header {
 	min-height: 470px;
 	position: relative;
 }
+
 .banner-img {
 	position: absolute;
 	width: 100%;
