@@ -1,0 +1,3 @@
+GitHub repository link : https://github.com/Flavien-Lebrun/Print-it
+
+GitHub Pages live website link : https://flavien-lebrun.github.io/Print-it/index.html

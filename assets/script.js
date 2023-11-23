@@ -19,10 +19,10 @@ const slides = [
 ];
 
 const bannerImg = document.querySelector(".banner-img");
-const dotsContainer = document.querySelector(".dots");
+const descriptionSlide = bannerImg.nextElementSibling;
 const previousImage = document.getElementById("arrowLeft");
 const nextImage = document.getElementById("arrowRight");
-const descriptionSlide = bannerImg.nextElementSibling;
+const dotsContainer = document.querySelector(".dots");
 
 let currentSlide = 0;
 
@@ -30,12 +30,26 @@ function showSlide(position) {
   currentSlide = (position + slides.length) % slides.length;
   const image = slides[currentSlide].image;
   const tagLine = slides[currentSlide].tagLine;
-
   bannerImg.src = `./assets/images/slideshow/${image}`;
-  bannerImg.alt = tagLine;
   descriptionSlide.innerHTML = tagLine;
 
   updateDots();
+}
+
+function changeSlide(n) {
+  showSlide(currentSlide + n);
+}
+
+function createDots() {
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement("span");
+    dot.className = "dot";
+    dot.dataset.index = i;
+    dot.onclick = function () {
+      showSlide(i);
+    };
+    dotsContainer.appendChild(dot);
+  }
 }
 
 function updateDots() {
@@ -47,22 +61,6 @@ function updateDots() {
   );
   if (currentDot) {
     currentDot.classList.add("dot_selected");
-  }
-}
-
-function changeSlide(n) {
-  showSlide(currentSlide + n);
-}
-
-function createDots() {
-  for (let i = 0; i < slides.length; i++) {
-    const dot = document.createElement("div");
-    dot.className = "dot";
-    dot.dataset.index = i;
-    dot.onclick = function () {
-      showSlide(i);
-    };
-    dotsContainer.appendChild(dot);
   }
 }
 
