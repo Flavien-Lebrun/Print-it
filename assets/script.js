@@ -27,7 +27,12 @@ const dotsContainer = document.querySelector(".dots");
 let currentSlide = 0;
 
 function showSlide(position) {
-  currentSlide = (position + slides.length) % slides.length;
+  if (position == slides.length) {
+    position = 0;
+    currentSlide = position;
+  } else {
+    currentSlide = position;
+  }
   const image = slides[currentSlide].image;
   const tagLine = slides[currentSlide].tagLine;
   bannerImg.src = `./assets/images/slideshow/${image}`;
