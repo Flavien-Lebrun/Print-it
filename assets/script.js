@@ -30,6 +30,10 @@ function showSlide(position) {
   if (position == slides.length) {
     position = 0;
     currentSlide = position;
+  }
+  if (position == -1) {
+    position = slides.length - 1;
+    currentSlide = position;
   } else {
     currentSlide = position;
   }
