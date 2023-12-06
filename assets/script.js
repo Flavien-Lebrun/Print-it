@@ -49,6 +49,9 @@ function changeSlide(n) {
   showSlide(currentSlide + n);
 }
 
+previousImage.addEventListener("click", () => changeSlide(-1));
+nextImage.addEventListener("click", () => changeSlide(1));
+
 function createDots() {
   for (let i = 0; i < slides.length; i++) {
     const dot = document.createElement("span");
@@ -75,106 +78,3 @@ function updateDots() {
 
 createDots();
 updateDots();
-
-previousImage.addEventListener("click", () => changeSlide(-1));
-nextImage.addEventListener("click", () => changeSlide(1));
-
-// document.getElementById("arrowLeft").addEventListener("click", () => {
-//   console.log("Tu as tourné la slide à gauche");
-// });
-
-// document.getElementById("arrowRight").addEventListener("click", () => {
-//   console.log("Tu as tourné la slide à droite");
-// });
-
-// const mousemove = document.querySelector(".mousemove");
-
-// window.addEventListener("mousemove", (e) => {
-//   mousemove.style.left = e.pageX + "px";
-// mousemove.style.top = e.pageY + "px";
-// });
-
-//--------------------------------
-
-// const keyPressContainer = document.querySelector(".keypress");
-// const key = document.getElementById("key");
-
-// const ring = () => {
-//   const audio = new Audio();
-//   audio.src = "./Appel-prière-2.mp3";
-//   audio.play();
-// };
-
-// document.addEventListener("keypress", (e) => {
-//   key.textContent = e.key;
-//   ring();
-// });
-
-// const swipeLeftSlide = document.querySelector("#arrowLeft");
-
-// swipeLeftSlide.addEventListener("click", () => {
-//   swipeLeftSlide.style.background = "red";
-// });
-
-// console.log(slides);
-
-// let chaine = "Je suis une chaine de caractères";
-
-// let nouvelleChaine = `Chaine précédente : ${chaine}`;
-
-// console.log(nouvelleChaine);
-
-// let string = "Je suis une chaine de caractères";
-// let number = 24;
-// let boolean = false;
-// // Crochets = tableau
-// let array = ["Je", "suis", 47, true];
-
-// // Accolades = objet
-// let object = {
-//   prenom: "audrey",
-//   age: 33,
-//   ville: "bordeaux",
-// };
-
-// let arbre;
-
-// // Les opérateurs
-// console.log(4 ** 5);
-
-// // Opérateurs d'affectations
-// let total = 0;
-// total = total + 1;
-// total++;
-// total += 5;
-
-// console.log(total);
-
-// // Structures de controle
-// let x = 5;
-// let y = 6;
-
-// // if (x > y) {
-// //   alert("YES x plus gros que y");
-// // } else if (y > x) {
-// //   alert("Y est plus grand que X");
-// // } else {
-// //   alert("Ils sont égaux");
-// // }
-
-// // Fonction classique
-// function faireQuelqueChose() {
-//   console.log("Je fais un truc");
-//   console.log(5 + 6);
-//   alert("Calcul terminé !");
-// }
-// // Appel de la fonction
-// // faireQuelqueChose();
-
-// // Fonction fléchée
-// const addition = (a, b) => {
-//   console.log(a + b);
-// };
-
-// addition(4, 3);
-// addition(25554, 325525);
